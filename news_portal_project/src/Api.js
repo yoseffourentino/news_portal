@@ -9,6 +9,11 @@ export const getNewsList = async() => {
     return news.data.articles; 
 }
 
+export const getCatList = async() => {
+    const news = await axios.get(`${base_url}/everything?q=bitcoin&apiKey=${api_Key}`)
+    return news.data.articles
+}
+
 // export const searchNews = async() => {
 //     const search = await axios.get()
 //     return

@@ -8,8 +8,8 @@ export default function Home(){
         <>
             <Header/>
             <Hero/>
-            <Category/>
             <News/>
+            <Category/>
         </>
     )
 };

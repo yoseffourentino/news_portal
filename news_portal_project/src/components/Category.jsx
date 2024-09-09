@@ -1,53 +1,101 @@
 import { useEffect, useState } from "react"
 import { getCatList } from "../Api"
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Category(){
 
     const [category, setCategory] = useState([])
-    
+    const [page, setPage] = useState(1)
+    const [catList, setCatList] = useState("business")
+    const [activeCategory, setActiveCategory] = useState("business")
+
     useEffect(() => {
-        getCatList().then((result) => {
+        getCatList(page, catList).then((result) => {
             setCategory(result)
         })
-    }, [])
-
-    const settings = {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "60px",
-        slidesToShow: 1,
-        speed: 500,
-        rows: 2,
-        slidesPerRow: 2
-    };
+    }, [page, catList])
     
+    const prevButton = () => {
+        setPage(page <= 1 ? 1 : page - 1)
+        scrollTop()
+    }
+
+    const nextButton = () => {
+        setPage(page + 1)
+        scrollTop()
+    }
+
+    const scrollTop = () => {
+        scrollTo({
+            behavior: "smooth",
+            top: 900
+        })
+    }
+
+    const categoryHandler = (e) => {
+        setCatList(e.target.id)
+        setActiveCategory(e.target.id)
+        
+    }
+
     return(
         <div className="bg-[#E2DAD6] flex flex-col justify-center items-center">
-            <div className="w-[1366px] bg-[#F5EDED] m-[30px] p-[15px]">
+            <div className="w-[1366px] bg-[#F5EDED] m-[30px] p-[15px] rounded">
                 <ul className="flex gap-10 justify-around">
-                    <li>business</li>
-                    <li>entertainment</li>
-                    <li>general</li>
-                    <li>health</li>
-                    <li>science</li>
-                    <li>sport</li>
-                    <li>technology</li>
+                <li 
+                        className={`catButton ${activeCategory === "business" ? "active" : ""}`} 
+                        id="business" 
+                        onClick={categoryHandler}>
+                        business
+                    </li>
+                    <li 
+                        className={`catButton ${activeCategory === "entertainment" ? "active" : ""}`} 
+                        id="entertainment" 
+                        onClick={categoryHandler}>
+                        entertainment
+                    </li>
+                    <li 
+                        className={`catButton ${activeCategory === "general" ? "active" : ""}`} 
+                        id="general" 
+                        onClick={categoryHandler}>
+                        general
+                    </li>
+                    <li 
+                        className={`catButton ${activeCategory === "health" ? "active" : ""}`} 
+                        id="health" 
+                        onClick={categoryHandler}>
+                        health
+                    </li>
+                    <li 
+                        className={`catButton ${activeCategory === "science" ? "active" : ""}`} 
+                        id="science" 
+                        onClick={categoryHandler}>
+                        science
+                    </li>
+                    <li 
+                        className={`catButton ${activeCategory === "sport" ? "active" : ""}`} 
+                        id="sport" 
+                        onClick={categoryHandler}>
+                        sport
+                    </li>
+                    <li 
+                        className={`catButton ${activeCategory === "technology" ? "active" : ""}`} 
+                        id="technology" 
+                        onClick={categoryHandler}>
+                        technology
+                    </li>
                 </ul>
             </div>
-            <div className="w-[1366px] bg-[#F5EDED] p-[15px] grid grid-cols-3 gap-5">
-                {/* <Slider {...settings}> */}
+            <div className="w-[1366px] bg-[#F5EDED] p-[15px] grid grid-cols-3 gap-5 rounded">               
                 {
                     category.map((cat, i) => {
                         return(
                             <div key={i} className="h-[450px]">
-                                <div className="news-list bg-[#ffffff] p-[10px] h-[100%]" >
-                                    <div className="flex flex-col justify-between">
+                                <div className="news-list bg-[#ffffff] p-[10px] h-[100%] hover:scale-105 hover:transition rounded cursor-pointer" >
+                                    <div className="flex flex-col justify-between ">
                                         <h2 className="news-title text-[18px] font-semibold">{cat.title}</h2>
-                                        <img src={cat.urlToImage} alt="" className="w-[500px]" />
+                                        <img src={cat.urlToImage} alt="" className="h-[300px] bg-cover" />
                                     </div>
                                     <div>
                                         <p className="news-author text-[#ababab]">{cat.author}</p>
@@ -58,7 +106,11 @@ export default function Category(){
                         )
                     })
                 }
-                {/* </Slider> */}
+            </div>
+            <div className="flex justify-between items-center gap-4 w-[1366px] bg-[#F5EDED] p-[15px]">
+                <button className="bg-[#7FA1C3] py-1 px-10 text-[white] hover:opacity-75 rounded" onClick={prevButton}>Previous</button>
+                <p>{page}</p>
+                <button className="bg-[#7FA1C3] py-1 px-10 text-[white] hover:opacity-75 rounded" onClick={nextButton}>next</button>
             </div>
         </div>
     )

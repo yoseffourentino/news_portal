@@ -3,7 +3,7 @@ import heroImg from '../assets/newspaper.png'
 export default function Hero(){
     return(
         <div className="bg-[#E2DAD6] flex justify-center items-center">
-            <div className="w-[1366px] bg-[#7FA1C3] m-[30px]">
+            <div className="w-[1366px] bg-[#7FA1C3] m-[30px] rounded">
                 <div className='flex p-[20px] items-center justify-around'>
                     <div className='max-w-[600px]'>
                         <h1 className='font-bold text-xl'>This is NEWS portal website</h1>

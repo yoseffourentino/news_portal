@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getCatList } from "../Api"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 export default function Category(){
 
@@ -40,10 +41,10 @@ export default function Category(){
     }
 
     return(
-        <div className="bg-[#E2DAD6] flex flex-col justify-center items-center">
+        <div className="bg-[#E2DAD6] flex flex-col justify-center items-center pb-[30px]">
             <div className="w-[1366px] bg-[#F5EDED] m-[30px] p-[15px] rounded">
                 <ul className="flex gap-10 justify-around">
-                <li 
+                    <li 
                         className={`catButton ${activeCategory === "business" ? "active" : ""}`} 
                         id="business" 
                         onClick={categoryHandler}>
@@ -91,17 +92,20 @@ export default function Category(){
                 {
                     category.map((cat, i) => {
                         return(
-                            <div key={i} className="h-[450px]">
-                                <div className="news-list bg-[#ffffff] p-[10px] h-[100%] hover:scale-105 hover:transition rounded cursor-pointer" >
-                                    <div className="flex flex-col justify-between ">
-                                        <h2 className="news-title text-[18px] font-semibold">{cat.title}</h2>
-                                        <img src={cat.urlToImage} alt="" className="h-[300px] bg-cover" />
+                            <div key={i} className="h-[500px]">
+                                <Link to={cat.url}>
+                                    <div className="news-list bg-[#ffffff] p-[10px] h-[100%] hover:scale-105 hover:transition rounded cursor-pointer" >
+                                        <div className="flex flex-col justify-between ">
+                                            <img src={cat.urlToImage} alt="" className="h-[250px] bg-cover" />
+                                            <h2 className="news-title text-[20px] font-semibold">{cat.title}</h2>
+                                            <p className="text-[#555555] mt-[5px]">{cat.description}</p>
+                                        </div>
+                                        <div>
+                                            <p className="news-author text-[#ababab]">{cat.author}</p>
+                                            <p className="news-date text-[14px]">Published at: {cat.publishedAt}</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p className="news-author text-[#ababab]">{cat.author}</p>
-                                        <p className="news-date">{cat.publishedAt}</p>
-                                    </div>
-                                </div>
+                                </Link>
                             </div>
                         )
                     })
@@ -109,7 +113,7 @@ export default function Category(){
             </div>
             <div className="flex justify-between items-center gap-4 w-[1366px] bg-[#F5EDED] p-[15px]">
                 <button className="bg-[#7FA1C3] py-1 px-10 text-[white] hover:opacity-75 rounded" onClick={prevButton}>Previous</button>
-                <p>{page}</p>
+                <p>Page {page}</p>
                 <button className="bg-[#7FA1C3] py-1 px-10 text-[white] hover:opacity-75 rounded" onClick={nextButton}>next</button>
             </div>
         </div>

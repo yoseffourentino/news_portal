@@ -3,6 +3,7 @@ import { getNewsList } from "../Api"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 
 export default function News(){
@@ -33,12 +34,14 @@ export default function News(){
                     news.map((news, i) => {
                         return (
                             <div key={i} className="h-[400px]">
-                                <div className="news-list bg-[#ffffff] h-[100%] p-[10px] hover:scale-105 hover:transition rounded cursor-pointer" >
-                                    <h2 className="news-title text-[18px] font-semibold">{news.title}</h2>
-                                    <img src={news.urlToImage} alt="" className="h-[200px]" />
-                                    <p className="news-author text-[#ababab]">{news.author}</p>
-                                    <p className="news-date">{news.publishedAt}</p>
-                                </div>
+                                <Link to={`/news/${news.title}`}>
+                                    <div className="news-list bg-[#ffffff] h-[100%] p-[10px] hover:scale-105 hover:transition rounded cursor-pointer" >
+                                        <img src={news.urlToImage} alt="" className="h-[200px]" />
+                                        <h2 className="news-title text-[18px] font-semibold">{news.title}</h2>
+                                        <p className="news-author text-[#ababab]">{news.author}</p>
+                                        <p className="news-date">{news.publishedAt}</p>
+                                    </div>
+                                </Link>
                             </div>
                         )
                     })            

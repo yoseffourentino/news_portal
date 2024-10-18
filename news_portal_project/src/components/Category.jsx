@@ -7,32 +7,32 @@ import { Link } from "react-router-dom";
 export default function Category(){
 
     const [category, setCategory] = useState([])
-    const [page, setPage] = useState(1)
+    // const [page, setPage] = useState(1)
     const [catList, setCatList] = useState("business")
     const [activeCategory, setActiveCategory] = useState("business")
 
     useEffect(() => {
-        getCatList(page, catList).then((result) => {
+        getCatList(catList).then((result) => {
             setCategory(result)
         })
-    }, [page, catList])
+    }, [catList])
     
-    const prevButton = () => {
-        setPage(page <= 1 ? 1 : page - 1)
-        scrollTop()
-    }
+    // const prevButton = () => {
+    //     setPage(page <= 1 ? 1 : page - 1)
+    //     scrollTop()
+    // }
 
-    const nextButton = () => {
-        setPage(page + 1)
-        scrollTop()
-    }
+    // const nextButton = () => {
+    //     setPage(page + 1)
+    //     scrollTop()
+    // }
 
-    const scrollTop = () => {
-        scrollTo({
-            behavior: "smooth",
-            top: 900
-        })
-    }
+    // const scrollTop = () => {
+    //     scrollTo({
+    //         behavior: "smooth",
+    //         top: 900
+    //     })
+    // }
 
     const categoryHandler = (e) => {
         setCatList(e.target.id)
@@ -111,11 +111,11 @@ export default function Category(){
                     })
                 }
             </div>
-            <div className="flex justify-between items-center gap-4 w-[1366px] bg-[#F5EDED] p-[15px]">
+            {/* <div className="flex justify-between items-center gap-4 w-[1366px] bg-[#F5EDED] p-[15px]">
                 <button className="bg-[#7FA1C3] py-1 px-10 text-[white] hover:opacity-75 rounded" onClick={prevButton}>Previous</button>
-                <p>Page {page}</p>
+                    <p>Page {page}</p>
                 <button className="bg-[#7FA1C3] py-1 px-10 text-[white] hover:opacity-75 rounded" onClick={nextButton}>next</button>
-            </div>
+            </div> */}
         </div>
     )
 }

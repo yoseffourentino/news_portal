@@ -12,8 +12,12 @@ export default function Header(){
                         <Link to="/">
                             <li className="nav-items">Home</li>
                         </Link>
-                        <li className="nav-items">About</li>
-                        <li className="nav-items">Contact</li>
+                        <Link to="/about">
+                            <li className="nav-items">About</li>
+                        </Link>
+                        <Link to="/contact">
+                            <li className="nav-items">Contact</li>
+                        </Link>
                     </ul>
                     <Search />
                 <div className='flex gap-3'>

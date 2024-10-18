@@ -33,13 +33,15 @@ export default function News(){
                 {
                     news.map((news, i) => {
                         return (
-                            <div key={i} className="h-[400px]">
+                            <div key={i} className="h-[200px]">
                                 <Link to={`/news/${news.title}`}>
                                     <div className="news-list bg-[#ffffff] h-[100%] p-[10px] hover:scale-105 hover:transition rounded cursor-pointer" >
-                                        <img src={news.urlToImage} alt="" className="h-[200px]" />
-                                        <h2 className="news-title text-[18px] font-semibold">{news.title}</h2>
-                                        <p className="news-author text-[#ababab]">{news.author}</p>
-                                        <p className="news-date">{news.publishedAt}</p>
+                                        {/* <img src={news.urlToImage} alt="" className="h-[200px]" /> */}
+                                        <h2 className="news-title text-[20px] font-semibold">{news.title}</h2>
+                                        <div>
+                                            <p className="news-author text-[#ababab]">{news.author}</p>
+                                            <p className="news-date">{news.publishedAt}</p>
+                                        </div>
                                     </div>
                                 </Link>
                             </div>

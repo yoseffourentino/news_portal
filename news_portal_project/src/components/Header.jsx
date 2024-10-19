@@ -21,8 +21,10 @@ export default function Header(){
                     </ul>
                     <Search />
                 <div className='flex gap-3'>
-                    <button className='max-w-[30px]'><img src={saveLogo} alt="" /></button>
-                    <button className='max-w-[30px]'><img src={userLogo} alt="" /></button>
+                    <button className='max-w-[50px] rounded-[15px] p-[10px] hover:bg-[#7FA1C3] hover:shadow-2xl transition'><img src={saveLogo} alt="" /></button>
+                    <Link to="/login">
+                        <button className='max-w-[50px] rounded-[15px] p-[10px] hover:bg-[#7FA1C3] hover:shadow-2xl transition'><img src={userLogo} alt="" /></button>
+                    </Link>
                 </div>
             </div>
         </div>

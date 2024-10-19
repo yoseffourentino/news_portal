@@ -42,7 +42,7 @@ export default function Category(){
 
     return(
         <div className="bg-[#E2DAD6] flex flex-col justify-center items-center pb-[30px]">
-            <div className="w-[1366px] bg-[#F5EDED] m-[30px] p-[15px] rounded">
+            <div className="w-[1366px] bg-[#F5EDED] m-[30px] p-[15px] rounded-[15px] shadow-2xl">
                 <ul className="flex gap-10 justify-around">
                     <li 
                         className={`catButton ${activeCategory === "business" ? "active" : ""}`} 
@@ -88,13 +88,13 @@ export default function Category(){
                     </li>
                 </ul>
             </div>
-            <div className="w-[1366px] bg-[#F5EDED] p-[15px] grid grid-cols-3 gap-5 rounded">               
+            <div className="w-[1366px] bg-[#F5EDED] p-[15px] grid grid-cols-3 gap-5 rounded-[15px] shadow-2xl">               
                 {
                     category.map((cat, i) => {
                         return(
                             <div key={i} className="h-[500px]">
                                 <Link to={cat.url}>
-                                    <div className="news-list bg-[#ffffff] p-[10px] h-[100%] hover:scale-105 hover:transition rounded cursor-pointer" >
+                                    <div className="news-list bg-[#ffffff] p-[10px] h-[100%] hover:scale-105 hover:transition rounded-[15px] shadow-2xl cursor-pointer" >
                                         <div className="flex flex-col justify-between ">
                                             <img src={cat.urlToImage} alt="" className="h-[250px] bg-cover" />
                                             <h2 className="news-title text-[20px] font-semibold">{cat.title}</h2>

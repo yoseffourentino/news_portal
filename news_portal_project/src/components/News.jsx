@@ -26,7 +26,7 @@ export default function News(){
 
     return(
         <div className="bg-[#E2DAD6] flex justify-center">
-            <div className="bg-[#F5EDED] flex flex-col justify-center items-center w-[1366px] px-[30px] pb-[50px] pt-[20px] rounded"> 
+            <div className="bg-[#F5EDED] flex flex-col justify-center items-center w-[1366px] px-[30px] pb-[50px] pt-[20px] rounded-[15px] shadow-2xl"> 
                 <h1 className="font-bold text-[24px] mb-[20px]">TOP HEADLINES</h1>
                 <div className="news-container w-[100%]">
                 <Slider {...settings}>

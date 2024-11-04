@@ -13,9 +13,9 @@ export default function About(){
     return(
         <div>
                 <Header />
-            <div className="flex flex-col justify-center items-center bg-[#E2DAD6] pb-[30px]">
+            <div className="flex flex-col justify-center items-center bg-[#03346E] pb-[30px]">
                 <Hero />
-                <div className="w-[1366px] bg-[#F5EDED] flex justify-around items-center p-[20px] mb-[30px] rounded">
+                <div className="w-[1366px] bg-[#E2E2B6] flex justify-around items-center p-[20px] mb-[30px] rounded-[15px] shadow-2xl">
                     <div className="">
                         <img src={hotnews} alt="" className="max-w-[400px]" />
                     </div>
@@ -24,7 +24,7 @@ export default function About(){
                         <p className="text-[#555555]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique amet cumque doloremque, dolorum quas asperiores architecto. Libero odit voluptatum amet accusamus itaque sunt omnis est nihil, sapiente temporibus quas quos!</p>
                     </div>
                 </div>
-                <div className="w-[1366px] bg-[#ffff] flex justify-around items-center p-[20px] rounded">
+                <div className="w-[1366px] bg-[#ffff] flex justify-around items-center p-[20px] rounded-[15px] shadow-2xl">
                     <div className="max-w-[600px]">
                         <h1 className="font-bold text-xl">PT. Winnicode Garuda Teknologi</h1>
                         <p className="text-[#555555]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique amet cumque doloremque, dolorum quas asperiores architecto. Libero odit voluptatum amet accusamus itaque sunt omnis est nihil, sapiente temporibus quas quos!</p>
@@ -33,8 +33,8 @@ export default function About(){
                         <img src={wiinnicodelogo} alt="" className="max-w-[400px]" />
                     </div>
                 </div>
-                <div className="flex flex-col gap-7 justify-center items-center">
-                    <h2>Connect With Us at:</h2>
+                <div className="flex flex-col gap-7 justify-center items-center mt-[20px]">
+                    <h2 className="text-[#E2E2B6]">Connect With Us at:</h2>
                     <div className="flex gap-5">
                         <img src={instagram} alt="" className="max-w-[30px] cursor-pointer hover:opacity-70"/>
                         <img src={twitter} alt="" className="max-w-[30px] cursor-pointer hover:opacity-70" />
@@ -42,7 +42,7 @@ export default function About(){
                         <img src={github} alt="" className="max-w-[30px] cursor-pointer hover:opacity-70" />
                     </div>
                     <div className="p-[10px]">
-                        <p>Or you can contact us in here:
+                        <p className="text-[#E2E2B6]">Or you can contact us in here:
                             <Link to="/contact">
                                 <button className="bg-[#000000] p-[9px] ml-[5px] rounded text-[#fff] hover:opacity-70">Contact Us</button>
                             </Link> 

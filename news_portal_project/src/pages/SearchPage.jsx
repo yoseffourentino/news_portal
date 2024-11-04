@@ -37,11 +37,11 @@ export default function SearchPage(){
     return(
         <>
             <Header />
-            <div className="flex flex-col justify-center items-center bg-[#E2DAD6] pb-[30px]">
-                <div className="bg-[#7FA1C3] w-[1366px] my-[20px] p-[20px] rounded text-[white]">
+            <div className="flex flex-col justify-center items-center bg-[#03346E] pb-[30px]">
+                <div className="bg-[#E2E2B6] w-[1366px] my-[20px] p-[20px] rounded text-[#021526]">
                     <p className="font-semibold text-[18px]">{`Search for  "${id}" `}</p>
                 </div>
-                <div className="w-[1366px] bg-[#F5EDED] p-[15px] grid grid-cols-3 gap-5 rounded">               
+                <div className="w-[1366px] bg-[#6EACDA] p-[15px] grid grid-cols-3 gap-5 rounded">               
                     {
                         newsList.map((news, i) => {
                             return(

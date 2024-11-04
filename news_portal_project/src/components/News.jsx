@@ -25,8 +25,8 @@ export default function News(){
     }
 
     return(
-        <div className="bg-[#E2DAD6] flex justify-center">
-            <div className="bg-[#F5EDED] flex flex-col justify-center items-center w-[1366px] px-[30px] pb-[50px] pt-[20px] rounded-[15px] shadow-2xl"> 
+        <div className="bg-[#03346E] flex justify-center">
+            <div className="bg-[#E2E2B6] flex flex-col justify-center items-center w-[1366px] px-[30px] pb-[50px] pt-[20px] rounded-[15px] shadow-2xl"> 
                 <h1 className="font-bold text-[24px] mb-[20px]">TOP HEADLINES</h1>
                 <div className="news-container w-[100%]">
                 <Slider {...settings}>
@@ -35,7 +35,7 @@ export default function News(){
                         return (
                             <div key={i} className="h-[200px]">
                                 <Link to={`/news/${news.title}`}>
-                                    <div className="news-list bg-[#ffffff] h-[100%] p-[10px] hover:scale-105 hover:transition rounded cursor-pointer" >
+                                    <div className="news-list bg-[#ffffff] h-[100%] p-[10px] hover:scale-105 hover:transition rounded-[15px] cursor-pointer" >
                                         {/* <img src={news.urlToImage} alt="" className="h-[200px]" /> */}
                                         <h2 className="news-title text-[20px] font-semibold">{news.title}</h2>
                                         <div>

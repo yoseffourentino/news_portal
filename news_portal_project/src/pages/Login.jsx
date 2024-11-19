@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Login(){
     return(
-        <div className="bg-[#E2DAD6] flex justify-center items-center h-[100vh]">
+        <div className="bg-[#021526] flex justify-center items-center h-[100vh]">
             <div className="bg-[#7FA1C3] w-[800px] h-[400px] flex flex-col justify-center items-center gap-6 p-[10px] rounded-[15px] shadow-2xl">
                 <h2 className="text-[40px]">Login</h2>
                 <input type="text" placeholder="username" className="w-[500px] p-[10px] rounded-[15px]"/>

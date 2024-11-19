@@ -2,7 +2,7 @@ import heroImg from '../assets/newspaper.png'
 
 export default function Hero(){
     return(
-        <div className="bg-[#03346E] flex justify-center items-center">
+        <div className="bg-[#021526] flex justify-center items-center">
             <div className="w-[1366px] bg-[#6EACDA] m-[30px] rounded-[15px] shadow-2xl">
                 <div className='flex p-[20px] items-center justify-around'>
                     <div className='max-w-[600px]'>

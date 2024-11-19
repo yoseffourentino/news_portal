@@ -37,7 +37,7 @@ export default function SearchPage(){
     return(
         <>
             <Header />
-            <div className="flex flex-col justify-center items-center bg-[#03346E] pb-[30px]">
+            <div className="flex flex-col justify-center items-center bg-[#021526] pb-[30px]">
                 <div className="bg-[#E2E2B6] w-[1366px] my-[20px] p-[20px] rounded text-[#021526]">
                     <p className="font-semibold text-[18px]">{`Search for  "${id}" `}</p>
                 </div>

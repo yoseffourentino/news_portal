@@ -13,7 +13,7 @@ export default function About(){
     return(
         <div>
                 <Header />
-            <div className="flex flex-col justify-center items-center bg-[#03346E] pb-[30px]">
+            <div className="flex flex-col justify-center items-center bg-[#021526] pb-[30px]">
                 <Hero />
                 <div className="w-[1366px] bg-[#E2E2B6] flex justify-around items-center p-[20px] mb-[30px] rounded-[15px] shadow-2xl">
                     <div className="">

@@ -5,7 +5,7 @@ import githublogo from '../assets/github.png'
 
 export default function Footer(){
     return(
-        <div className="h-[450px] bg-[#021526]">
+        <div className="h-[450px] bg-[#03346E]">
             <div className='flex justify-around p-[50px]'>
                 <div className='flex flex-col justify-center items-center gap-4'>
                     <img src={newslogo} alt="" className='w-[200px]'/>

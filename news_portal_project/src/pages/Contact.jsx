@@ -5,7 +5,7 @@ export default function Contact(){
     return(
         <div>
             <Header />
-            <div className="bg-[#03346E] flex justify-center">
+            <div className="bg-[#021526] flex justify-center">
                 <div className="w-[1366px] bg-[#6EACDA] flex flex-col items-center justify-center my-[30px] py-[30px] rounded-[15px] shadow-2xl">
                     <h1 className="font-bold text-[30px] mb-[20px]">Can we help you?</h1>
                     <div className="flex flex-col items-center gap-4">

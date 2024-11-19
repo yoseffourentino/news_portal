@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Header(){
     return(
         <div>
-            <div className="navbar flex justify-around p-[20px] items-center bg-[#021526]">
+            <div className="navbar flex justify-around p-[20px] items-center bg-[#03346E]">
                 <h1 className='text-xl font-bold text-[#fff]'>News Portal</h1>
                     <ul className='flex gap-10'>
                         <Link to="/">

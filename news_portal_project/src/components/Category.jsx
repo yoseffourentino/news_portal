@@ -41,7 +41,7 @@ export default function Category(){
     }
 
     return(
-        <div className="bg-[#03346E] flex flex-col justify-center items-center pb-[30px]">
+        <div className="bg-[#021526] flex flex-col justify-center items-center pb-[30px]">
             <div className="w-[1366px] bg-[#E2E2B6] m-[30px] p-[15px] rounded-[15px] shadow-2xl">
                 <ul className="flex gap-10 justify-around">
                     <li 

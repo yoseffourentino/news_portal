@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export default function Register(){
     return(
-        <div className="bg-[#E2DAD6] flex justify-center items-center h-[100vh]">
+        <div className="bg-[#021526] flex justify-center items-center h-[100vh]">
             <div className="bg-[#7FA1C3] w-[800px] h-[500px] flex flex-col justify-center items-center gap-6 p-[10px] rounded-[15px] shadow-2xl">
                 <h2 className="text-[40px]">Register</h2>
                 <input type="text" placeholder="Username" className="w-[500px] p-[10px] rounded-[15px]"/>

@@ -93,7 +93,7 @@ export default function Category(){
                     category.map((cat, i) => {
                         return(
                             <div key={i} className="h-[500px]">
-                                <Link to={cat.url}>
+                                <Link to={cat.url} target="_blank">
                                     <div className="news-list bg-[#ffffff] p-[10px] h-[100%] hover:scale-105 hover:transition rounded-[15px] shadow-2xl cursor-pointer" >
                                         <div className="flex flex-col justify-between ">
                                             <img src={cat.urlToImage} alt="" className="h-[250px] bg-cover" />

@@ -4,9 +4,13 @@ const mongoose = require('mongoose')
 //get all Articles
 
 const getArticles = async (req,res) => {
-    const articles = await Article.find({}).sort({createdAt: 1})
-
-    res.status(200).json(articles)
+    
+    try{
+        const articles = await Article.find({}).sort({createdAt: 1})
+        res.status(200).json(articles)
+    }catch{
+        res.status(404).json({error: "cannot get article"})
+    }
 }
 
 //get a single Article

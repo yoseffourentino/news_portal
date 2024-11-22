@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { getArticles, getArticle, createArticle, deleteArticle, updateArticle } = require('../controllers/articleController')
+const { postContact } = require('../controllers/contactController')
 
 require('dotenv').config()
 
@@ -18,5 +19,7 @@ router.delete('/:id', deleteArticle )
 
 //UPDATE an article
 router.patch('/:id', updateArticle )
+
+router.post('/contact', postContact)
 
 module.exports = router

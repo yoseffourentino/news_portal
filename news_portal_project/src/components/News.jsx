@@ -34,7 +34,7 @@ export default function News(){
                     news.map((news, i) => {
                         return (
                             <div key={i} className="h-[200px]">
-                                <Link to={`/news/${news.title}`}>
+                                <Link to={news.url} target="_blank">
                                     <div className="news-list bg-[#ffffff] h-[100%] p-[10px] hover:scale-105 hover:transition rounded-[15px] cursor-pointer" >
                                         {/* <img src={news.urlToImage} alt="" className="h-[200px]" /> */}
                                         <h2 className="news-title text-[20px] font-semibold">{news.title}</h2>

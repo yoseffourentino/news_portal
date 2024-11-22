@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -21,13 +22,13 @@ export default function About(){
                     </div>
                     <div className="max-w-[600px]">
                         <h1 className="font-bold text-xl">So Many Hot News</h1>
-                        <p className="text-[#555555]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique amet cumque doloremque, dolorum quas asperiores architecto. Libero odit voluptatum amet accusamus itaque sunt omnis est nihil, sapiente temporibus quas quos!</p>
+                        <p className="text-[#555555] text-justify">we believe that staying informed should be fast, fun, and engaging. That’s why we’ve crafted a news portal that delivers fresh stories with a dynamic and interactive approach. Our dedicated team of journalists and content creators works around the clock to curate the most relevant and exciting news, ensuring you never miss a moment.</p>
                     </div>
                 </div>
                 <div className="w-[1366px] bg-[#ffff] flex justify-around items-center p-[20px] rounded-[15px] shadow-2xl">
                     <div className="max-w-[600px]">
                         <h1 className="font-bold text-xl">PT. Winnicode Garuda Teknologi</h1>
-                        <p className="text-[#555555]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique amet cumque doloremque, dolorum quas asperiores architecto. Libero odit voluptatum amet accusamus itaque sunt omnis est nihil, sapiente temporibus quas quos!</p>
+                        <p className="text-[#555555] text-justify">Our journey began with a vision to bridge the gap between information and accessibility in the digital age. Built with cutting-edge technology and a passion for storytelling, our platform ensures a seamless experience for readers while maintaining the highest standards of journalism. Our team of dedicated writers, editors, and developers works tirelessly to present diverse perspectives and in-depth reporting across various topics, including politics, business, technology, lifestyle, and entertainment.</p>
                     </div>
                     <div className="">
                         <img src={wiinnicodelogo} alt="" className="max-w-[400px]" />

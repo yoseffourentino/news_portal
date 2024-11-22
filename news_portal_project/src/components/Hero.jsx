@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import heroImg from '../assets/newspaper.png'
 
 export default function Hero(){
@@ -7,7 +8,7 @@ export default function Hero(){
                 <div className='flex p-[20px] items-center justify-around'>
                     <div className='max-w-[600px]'>
                         <h1 className='font-bold text-xl'>This is NEWS portal website</h1>
-                        <p className='text-[#ededed]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit temporibus hic amet quibusdam a debitis similique placeat porro maxime! Ut, possimus dignissimos! Dicta necessitatibus, illo iusto distinctio commodi ipsa. Saepe.</p>
+                        <p className='text-[#ededed] text-justify'>Welcome to our News Portal, a trusted platform where information meets innovation. As a modern hub for journalism, our mission is to deliver accurate, reliable, and engaging news that keeps you informed about the world around you. Whether it's breaking news, insightful analysis, or inspiring stories, we are committed to bringing you the best content tailored to your interests.</p>
                     </div>
                     <img src={heroImg} alt="" className='max-w-[400px]' />
                 </div>

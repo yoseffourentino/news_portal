@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import ArticleForm from "../components/ArticleForm"
+import logout from '../assets/logout.png'
+import { Link } from "react-router-dom"
 
 export const Home = () => {
     const [articles, setArticles] = useState(null)
@@ -20,9 +22,14 @@ export const Home = () => {
     return (
     <div className="home-container">
         <div>
+            {/* <Link to="/">
+                <div className="logout-btn">
+                    <img src={logout} alt="" />
+                </div>
+            </Link> */}
             <ArticleForm />
             <div className="article-container">
-                <h1>NEWS ARTICLE</h1>
+                <h1>NEWS ARTICLE PREVIEW</h1>
                 <div className="article-list">
                     { articles && articles.map((article) => (
                         <div key={article._id} className="article">

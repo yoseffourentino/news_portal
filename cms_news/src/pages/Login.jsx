@@ -16,11 +16,11 @@ export const Login = ({ setAuth }) => {
     }
 
     return (
-        <div>
-            <div>
+        <div className="login-parent">
+            <div className="login-container">
                 <h2>LOGIN</h2>
-                <form onSubmit={handleLogin}>
-                    <div>
+                <form onSubmit={handleLogin} className="login-form">
+                    <div className="login-form-list">
                         <label>Username</label>
                         <input 
                         type="text" 
@@ -28,7 +28,7 @@ export const Login = ({ setAuth }) => {
                         onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
-                    <div>
+                    <div className="login-form-list">
                         <label>Password</label>
                         <input 
                         type="password" 
@@ -36,8 +36,8 @@ export const Login = ({ setAuth }) => {
                         onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    {error && <p>{error}</p>}
-                    <button type="submit">Login</button>
+                    {error && <p className="error">{error}</p>}
+                    <button type="submit">LOGIN</button>
                 </form>
             </div>
         </div>

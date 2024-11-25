@@ -31,6 +31,7 @@ export const Home = () => {
                             <p>{article.desc}</p>
                             <p>Author: {article.author}</p>
                             <p>Category: {article.category}</p>
+                            <p>Content: {article.content}</p>
                         </div>
                     ))
 

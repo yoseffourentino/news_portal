@@ -105,15 +105,16 @@ const ArticleForm = () => {
                         value={desc}
                     />
                 </div>
-                <div className="form-content">
+                <div className="form-content-input">
                     <label>Add Content</label>
-                    <input 
+                    <textarea 
                         type="text"
+                        rows={10}
                         onChange={(e) => setContent(e.target.value)}
                         value={content}
                     />
                 </div>
-                <button className="form-button">Add Article</button>
+                <button className="form-button">ADD ARTICLE</button>
                 {error && <div>{error}</div>}
             </form>
         </div>

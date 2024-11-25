@@ -40,64 +40,83 @@ const ArticleForm = () => {
 
     }
 
-    const handleImage = (e) => {
-        console.log(e.target.files)
+    const handleImage = async (e) => {
+        const file = e.target.files[0]
+
+        if(!file) return
+            const data = new FormData()
+            data.append("file", file)
+            data.append("upload_preset", "article_image_upload")
+            data.append("cloud_name", "dl1jazor2")
+
+            const response = await fetch('https://api.cloudinary.com/v1_1/dl1jazor2/image/upload', {
+                method:"POST",
+                body: data
+            })
+
+            const uploadedImageURL = await response.json()            
+            setImage(uploadedImageURL.url)
+            console.log(uploadedImageURL.url)
+    
+                
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col">
-            <h3>Add New Article</h3>
-            <div>
-                <label>Add Title</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setTitle(e.target.value)}
-                    value={title}
-                />
-            </div>
-            <div>
-                <label>Add Category</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setCategory(e.target.value)}
-                    value={category}
-                />
-            </div>
-            <div>
-                <label>Add Author</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setAuthor(e.target.value)}
-                    value={author}
-                />
-            </div>
-            <div>
-                <label>Add Image(URL)</label>
-                <input 
-                    type="file"
-                    onChange={handleImage}
-                    // value={image}
-                />
-            </div>
-            <div>
-                <label>Add short Description</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setDesc(e.target.value)}
-                    value={desc}
-                />
-            </div>
-            <div>
-                <label>Add Content</label>
-                <input 
-                    type="text"
-                    onChange={(e) => setContent(e.target.value)}
-                    value={content}
-                />
-            </div>
-            <button>Add Article</button>
-            {error && <div>{error}</div>}
-        </form>
+        <div className="form-container">    
+            <form onSubmit={handleSubmit} className="form">
+                <h3>Add New Article</h3>
+                <div className="form-content">
+                    <label>Add Title</label>
+                    <input 
+                        type="text"
+                        onChange={(e) => setTitle(e.target.value)}
+                        value={title}
+                    />
+                </div>
+                <div className="form-content">
+                    <label>Add Category</label>
+                    <input 
+                        type="text"
+                        onChange={(e) => setCategory(e.target.value)}
+                        value={category}
+                    />
+                </div>
+                <div className="form-content">
+                    <label>Add Author</label>
+                    <input 
+                        type="text"
+                        onChange={(e) => setAuthor(e.target.value)}
+                        value={author}
+                    />
+                </div>
+                <div className="form-content">
+                    <label>Add Image(URL)</label>
+                    <input 
+                        type="file"
+                        onChange={handleImage}
+                        // value={image}
+                    />
+                </div>
+                <div className="form-content">
+                    <label>Add short Description</label>
+                    <input 
+                        type="text"
+                        onChange={(e) => setDesc(e.target.value)}
+                        value={desc}
+                    />
+                </div>
+                <div className="form-content">
+                    <label>Add Content</label>
+                    <input 
+                        type="text"
+                        onChange={(e) => setContent(e.target.value)}
+                        value={content}
+                    />
+                </div>
+                <button className="form-button">Add Article</button>
+                {error && <div>{error}</div>}
+            </form>
+        </div>
     )
 }
 

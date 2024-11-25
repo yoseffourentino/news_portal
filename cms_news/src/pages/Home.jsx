@@ -18,18 +18,26 @@ export const Home = () => {
     }, [])
 
     return (
-    <div>
-        <h1>NEWS ARTICLE</h1>
+    <div className="home-container">
         <div>
-            { articles && articles.map((article) => (
-                <div key={article._id}>
-                    <h2>{article.title}</h2>
-                </div>
-            ))
+            <ArticleForm />
+            <div className="article-container">
+                <h1>NEWS ARTICLE</h1>
+                <div className="article-list">
+                    { articles && articles.map((article) => (
+                        <div key={article._id} className="article">
+                            <h2>{article.title}</h2>
+                            <img src={article.image} alt="" />
+                            <p>{article.desc}</p>
+                            <p>Author: {article.author}</p>
+                            <p>Category: {article.category}</p>
+                        </div>
+                    ))
 
-            }
+                    }
+                </div>
+            </div>
         </div>
-        <ArticleForm />
     </div>
 )
 }
